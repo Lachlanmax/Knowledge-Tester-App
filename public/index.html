@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Tester - Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🧠 Knowledge Tester</h1>
+            <p>Test your knowledge across different subjects!</p>
+        </header>
+
+        <!-- Home Screen -->
+        <div id="homeScreen" class="screen active">
+            <div class="player-info">
+                <input type="text" id="playerName" placeholder="Enter your name" maxlength="50">
+            </div>
+            <div class="categories-grid" id="categoriesGrid"></div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="screen">
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    <span id="categoryName" class="category-badge"></span>
+                    <span id="questionNumber" class="question-number"></span>
+                </div>
+                <div class="timer" id="timer">30s</div>
+            </div>
+
+            <div class="quiz-content">
+                <h2 id="questionText" class="question"></h2>
+                <div class="options" id="optionsContainer"></div>
+            </div>
+
+            <div class="quiz-footer">
+                <button id="prevBtn" class="btn btn-secondary" onclick="previousQuestion()">Previous</button>
+                <button id="nextBtn" class="btn btn-secondary" onclick="nextQuestion()">Next</button>
+                <button id="submitBtn" class="btn btn-primary" onclick="submitQuiz()" style="display:none;">Submit Quiz</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="results-container">
+                <h2>Quiz Complete! 🎉</h2>
+                <div class="score-display">
+                    <div id="scoreText" class="score-text"></div>
+                    <div class="score-circle">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" class="circle-bg"></circle>
+                            <circle cx="50" cy="50" r="45" class="circle-progress" id="scoreCircle"></circle>
+                        </svg>
+                        <div id="scorePercentage" class="score-percentage"></div>
+                    </div>
+                </div>
+                <div class="results-stats" id="resultsStats"></div>
+                <button class="btn btn-primary" onclick="goHome()">Take Another Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

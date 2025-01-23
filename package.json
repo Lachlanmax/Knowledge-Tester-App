@@ -1,0 +1,23 @@
+{
+  "name": "knowledge-tester-app",
+  "version": "1.0.0",
+  "description": "A Kahoot-like knowledge testing application",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "npm run build:client",
+    "build:client": "echo 'Build complete'",
+    "start": "node server.js"
+  },
+  "keywords": ["quiz", "trivia", "education"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
